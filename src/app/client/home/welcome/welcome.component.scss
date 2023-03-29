@@ -1,0 +1,33 @@
+.welcome {
+  padding: 25px;
+  background-color: #008e8a;
+  border-radius: 15px;
+  color: white;
+  height: 100%;
+  &__title {
+    font-size: 22px;
+    font-weight: 500;
+  }
+  &__text {
+    margin-top: 15px;
+  }
+  &__btn {
+    span {
+      font-weight: 400;
+      font-size: 20px;
+    }
+    padding: 22px 18px !important;
+    color: #014d32 !important;
+    font-weight: 500;
+    font-size: 17px;
+    border-radius: 5px;
+    border: none;
+    margin-top: 40px;
+    letter-spacing: 0.8px;
+  }
+}
+.mdc-button__label {
+  display: flex !important;
+  align-items: center !important;
+  gap: 7px;
+}

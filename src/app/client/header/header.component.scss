@@ -1,0 +1,31 @@
+.header {
+  color: white;
+  padding: 20px 70px;
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__logo {
+    line-height: 23px;
+    font-size: 18px;
+    letter-spacing: 0.8px;
+    font-weight: 500;
+  }
+  &__search {
+    background-color: transparent;
+    border: none;
+    border-bottom: 1.5px solid green;
+    color: white;
+    padding: 10px 10px;
+    font-size: 16px;
+  }
+  &__box {
+    display: flex;
+    align-items: center;
+  }
+  &__date {
+    color: rgba(255, 255, 255, 0.637);
+    margin-right: 24px;
+  }
+}

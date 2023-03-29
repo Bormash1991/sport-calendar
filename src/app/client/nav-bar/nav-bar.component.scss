@@ -1,0 +1,34 @@
+.nav {
+  padding-top: 40px;
+  svg {
+    fill: white;
+  }
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  &__link {
+    padding: 15px;
+    padding-left: 70px;
+    display: block;
+    outline: none;
+    &__circle {
+      height: 50px;
+      width: 50px;
+      border-radius: 50%;
+      background-color: #292c36;
+      padding: 5px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    &_active {
+      border: 1px solid rgba(49, 114, 49, 0.659);
+      border-left: none;
+      border-radius: 0 40px 40px 0;
+    }
+  }
+}

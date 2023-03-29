@@ -1,0 +1,14 @@
+.graph {
+  padding: 25px 30px;
+  padding-bottom: 0px;
+  background-color: #131517;
+  border-radius: 15px;
+  &__text {
+    margin-bottom: -35px;
+    color: white;
+    padding-left: 12px;
+
+    font-size: 22px;
+    font-weight: 500;
+  }
+}

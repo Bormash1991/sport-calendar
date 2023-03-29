@@ -1,1 +1,19 @@
-/* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
+@import "./styles/reset.scss";
+@import "./styles/base.scss";
+@import "./styles/container.scss";
+@import "./styles/font.scss";
+@import "@danielmoncada/angular-datetime-picker/assets/style/picker.min.css";
+body::-webkit-scrollbar {
+  width: 5px;
+  /* ширина всей полосы прокрутки */
+}
+
+body::-webkit-scrollbar-track {
+  background-color: rgba(0, 0, 0, 0.94);
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: rgb(113, 113, 118); /* цвет бегунка */
+  border-radius: 20px; /* округлось бегунка */
+}

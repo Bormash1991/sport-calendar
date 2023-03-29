@@ -1,0 +1,59 @@
+.calendar {
+  border: 1px solid #008e8a;
+  padding: 20px;
+  border-radius: 15px;
+  height: 100%;
+  &__title {
+    color: white;
+    font-size: 19px;
+  }
+  &__link {
+    color: #008e8a;
+    text-decoration: none;
+  }
+  &__box {
+    margin-top: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 15px;
+  }
+}
+::ng-deep .owl-dt-container {
+  background-color: transparent;
+}
+::ng-deep .owl-dt-calendar-table .owl-dt-calendar-cell-content {
+  color: white;
+}
+::ng-deep .owl-dt-inline-container {
+  box-shadow: none;
+}
+::ng-deep .owl-dt-calendar-cell-selected {
+  background-color: rgba(49, 114, 49, 0.659) !important;
+}
+::ng-deep .owl-dt-weekday {
+  color: white;
+}
+::ng-deep .owl-dt-control-button-content {
+  color: white;
+}
+::ng-deep .owl-dt-control-button-arrow {
+  fill: white;
+}
+::ng-deep .owl-dt-calendar-control {
+  padding: 0;
+  padding-bottom: 20px;
+  justify-content: center;
+  gap: 10px;
+}
+::ng-deep .owl-dt-calendar-control .owl-dt-calendar-control-content {
+  flex: none;
+}
+::ng-deep
+  .owl-dt-calendar-table
+  .owl-dt-calendar-cell-today:not(.owl-dt-calendar-cell-selected) {
+  border-color: rgba(49, 114, 49, 0.659);
+}
+::ng-deep .owl-dt-calendar-header {
+  color: white !important;
+}

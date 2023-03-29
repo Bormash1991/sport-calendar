@@ -1,0 +1,17 @@
+<div class="reminder">
+  <h3 class="reminder__title">Нагадування</h3>
+  <div *ngIf="areNoReminders" class="reminder__not">
+    Ваш браузер не підтримує нагадування
+  </div>
+
+  <div class="reminder__empty">Список нагадувань пустий</div>
+  <div class="reminder__list"></div>
+  <button
+    color="primary"
+    *ngIf="!areNoReminders"
+    class="reminder__btn"
+    mat-raised-button
+  >
+    <span>+</span> Створити подію
+  </button>
+</div>

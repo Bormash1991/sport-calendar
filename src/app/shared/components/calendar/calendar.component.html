@@ -1,0 +1,6 @@
+<owl-date-time-inline
+  [firstDayOfWeek]="1"
+  [(ngModel)]="selected"
+  [pickerType]="'calendar'"
+  (ngModelChange)="chooseDate($event)"
+></owl-date-time-inline>
