@@ -1,0 +1,17 @@
+<h1 class="modal__title" mat-dialog-title>Змінити вагу</h1>
+<div class="modal" mat-dialog-content>
+  <form class="modal__box" [formGroup]="form">
+    <mat-form-field>
+      <mat-label> Вага </mat-label>
+      <input matInput formControlName="weight" required />
+    </mat-form-field>
+  </form>
+</div>
+<div class="modal__btn-box" mat-dialog-actions>
+  <button class="modal__btn-cancel" color="primary" mat-button mat-dialog-close>
+    Cancel
+  </button>
+  <button class="modal__btn-ok" color="primary" mat-button (click)="upd()">
+    OK
+  </button>
+</div>

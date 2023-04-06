@@ -1,0 +1,66 @@
+<div class="reg">
+  <div class="reg__container">
+    <mat-stepper orientation="vertical" [linear]="true" #stepper>
+      <mat-step [stepControl]="firstFormGroup">
+        <form [formGroup]="firstFormGroup" class="reg__form">
+          <ng-template matStepLabel>Введіть email та пароль</ng-template>
+          <mat-form-field>
+            <mat-label>Email</mat-label>
+            <input matInput formControlName="email" type="email" required />
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Пароль</mat-label>
+            <input
+              matInput
+              formControlName="password"
+              type="password"
+              required
+            />
+          </mat-form-field>
+          <div>
+            <button mat-button matStepperNext>Далі</button>
+          </div>
+        </form>
+      </mat-step>
+      <mat-step [stepControl]="secondFormGroup">
+        <form [formGroup]="secondFormGroup" class="reg__form">
+          <ng-template matStepLabel>Ваші данні</ng-template>
+          <mat-form-field>
+            <mat-label>Ім'я</mat-label>
+            <input matInput formControlName="name" required />
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Дата народження</mat-label>
+            <input
+              matInput
+              formControlName="date"
+              required
+              [matDatepicker]="picker"
+            />
+            <mat-datepicker-toggle
+              matIconSuffix
+              [for]="picker"
+            ></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Вага</mat-label>
+            <input matInput formControlName="weight" required />
+          </mat-form-field>
+          <div>
+            <button mat-button matStepperPrevious>Назад</button>
+            <button mat-button matStepperNext>Далі</button>
+          </div>
+        </form>
+      </mat-step>
+      <mat-step>
+        <ng-template matStepLabel>Готово</ng-template>
+
+        <div>
+          <button mat-button matStepperPrevious>Назад</button>
+          <button mat-button (click)="reg()">Готово</button>
+        </div>
+      </mat-step>
+    </mat-stepper>
+  </div>
+</div>

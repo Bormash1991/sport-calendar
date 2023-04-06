@@ -1,10 +1,10 @@
 <div class="welcome">
-  <h3 class="welcome__title">Привіт, *****</h3>
+  <h3 class="welcome__title">Привіт, {{ userName }}</h3>
   <div class="welcome__text">
     Ласкаво просимо до вашого щоденного календаря подій. Тут ви можете побачити
-    всі майбутні події. зустрічі та створення нових подій.
+    всі майбутні події, зустрічі та створити нові події.
   </div>
-  <button class="welcome__btn" mat-raised-button>
+  <button (click)="openDialog()" class="welcome__btn" mat-raised-button>
     <span>+</span> Створити подію
   </button>
 </div>

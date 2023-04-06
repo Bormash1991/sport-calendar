@@ -5,9 +5,23 @@
       Time
     </div>
     <div class="header__box">
-      <div class="header__date">Березень 26, 2023</div>
-      <input type="text" class="header__search" placeholder="Search" />
-      <div class="header__user"></div>
+      <div class="header__date">{{ date }}</div>
+      <a
+        matRipple
+        [matRippleColor]="'rgba(255, 255, 255, 0.1)'"
+        routerLink="user"
+        class="header__user"
+      >
+        <div class="header__user_box">
+          <div class="header__user_name">{{ userName }}</div>
+          <div class="header__user_role">admin</div>
+        </div>
+        <img
+          [src]="userImg"
+          alt="avatar"
+          class="header__user_img header__user_unknown"
+        />
+      </a>
     </div>
   </div>
 </div>

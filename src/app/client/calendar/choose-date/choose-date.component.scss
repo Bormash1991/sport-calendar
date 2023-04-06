@@ -1,0 +1,15 @@
+.choosen-date {
+  background-color: #131517;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  padding: 25px;
+  &__btn {
+    margin-top: 40px;
+    background-color: transparent !important;
+    color: #008e8a !important;
+    border: 1.5px solid #008e8a;
+    padding: 0 35px;
+    height: 45px !important;
+  }
+}

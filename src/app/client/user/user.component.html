@@ -1,0 +1,64 @@
+<div class="user">
+  <h1 class="user__title">Налаштування користувача</h1>
+  <div class="user__container">
+    <div class="user__container_left">
+      <div class="user__box user__box_name">
+        <div class="user__lable">Ім'я:</div>
+        <div class="user__text">{{ userName }}</div>
+      </div>
+      <div class="user__box user__box_date">
+        <div class="user__lable">Дата народження:</div>
+        <div class="user__text">{{ userDate }}</div>
+      </div>
+      <div class="user__box user__box_weight">
+        <div class="user__lable">Вага на даний момент:</div>
+        <div class="user__box_flex">
+          <div class="user__text">
+            {{
+              currentUserWeight
+                ? currentUserWeight
+                : "Ви не зважувалися цьго місяця"
+            }}
+          </div>
+          <button
+            (click)="openDialog()"
+            color="primary"
+            class="user__btn_upd"
+            mat-raised-button
+          >
+            <svg
+              class="user__edit"
+              height="25px"
+              width="25px"
+              viewBox="0 96 960 960"
+            >
+              <use href="assets/sprite.svg#icon-edit"></use>
+            </svg>
+          </button>
+        </div>
+      </div>
+      <div class="user__box user__box_graph">
+        <app-weight-graph [graphUser]="true"></app-weight-graph>
+      </div>
+    </div>
+    <div class="user__box user__box_img">
+      <img [src]="userImg" alt="avatar" class="user__img" />
+      <button
+        (click)="selectFile()"
+        color="primary"
+        class="user__btn"
+        mat-raised-button
+      >
+        Нове зображення
+      </button>
+      <button
+        color="primary"
+        class="user__btn_logout"
+        (click)="logOut()"
+        mat-raised-button
+      >
+        Вийти з аккаунту
+      </button>
+    </div>
+  </div>
+</div>

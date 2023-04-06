@@ -6,7 +6,7 @@
   height: 100%;
   display: flex;
   justify-content: space-between;
-  // align-items: space-between;
+  align-items: left;
   flex-direction: column;
   &__title {
     color: white;
@@ -20,7 +20,7 @@
     background-color: transparent !important;
     color: #008e8a !important;
     border: 1.5px solid #008e8a;
-    padding: 0 30px;
+    padding: 0 35px;
     height: 45px !important;
   }
 }

@@ -1,0 +1,13 @@
+.events-box {
+  padding: 25px;
+  background-color: #131517;
+  border-radius: 15px;
+  height: 100%;
+  &__empty {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgba(255, 255, 255, 0.458);
+  }
+}

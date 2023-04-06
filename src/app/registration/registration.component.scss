@@ -1,0 +1,88 @@
+.reg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  &__container {
+    padding: 65px 65px;
+    background-color: #131517;
+    border-radius: 15px;
+  }
+  &__form {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+  }
+}
+::ng-deep .mat-stepper-vertical {
+  background-color: transparent;
+}
+::ng-deep .mat-step-header .mat-step-label {
+  color: white;
+}
+::ng-deep .mat-step-header .mat-step-label.mat-step-label-active {
+  color: white;
+}
+::ng-deep
+  .mdc-floating-label--required:not(
+    .mdc-floating-label--hide-required-marker
+  )::after {
+  content: "" !important;
+}
+::ng-deep .mdc-text-field:not(.mdc-text-field--disabled) .mdc-floating-label {
+  color: rgba(255, 255, 255, 0.458);
+}
+::ng-deep
+  .mdc-text-field--invalid:not(.mdc-text-field--disabled)
+  .mdc-floating-label {
+  color: #f44336;
+}
+::ng-deep .mdc-text-field--filled {
+  background-color: transparent !important;
+}
+::ng-deep .mdc-line-ripple::before {
+  border-bottom-color: rgba(49, 114, 49, 0.659) !important;
+}
+::ng-deep .mdc-line-ripple::after {
+  border-bottom-color: rgba(49, 114, 49, 0.659) !important;
+}
+::ng-deep .mdc-text-field__input {
+  color: white !important;
+  font-size: 16px !important;
+}
+
+::ng-deep .mat-step-header .mat-step-icon {
+  background-color: rgba(154, 150, 150, 0.178);
+}
+::ng-deep .mat-step-header .mat-step-icon-selected {
+  background-color: rgba(49, 114, 49, 0.751);
+}
+::ng-deep .mat-vertical-content-container {
+  margin-left: 0px !important;
+}
+::ng-deep .mat-mdc-button:not(:disabled) {
+  color: white !important;
+}
+::ng-deep .mat-mdc-button,
+.mat-mdc-outlined-button {
+  --mat-mdc-button-persistent-ripple-color: #008e8a;
+  --mat-mdc-button-ripple-color: rgba(145, 140, 140, 0.127);
+}
+::ng-deep .mat-step-header:hover:not([aria-disabled]) {
+  background-color: #008e8905;
+  border-radius: 5px;
+}
+::ng-deep .mat-stepper-vertical-line::before {
+  border-left-color: #008e8a;
+}
+::ng-deep .mat-step-header.cdk-program-focused {
+  background-color: transparent;
+}
+::ng-deep .mat-datepicker-toggle {
+  color: rgb(161, 155, 155);
+}
+::ng-deep
+  .mat-mdc-snack-bar-container
+  .mat-mdc-button.mat-mdc-snack-bar-action:not(:disabled) {
+  color: rgb(210, 71, 71) !important;
+}

@@ -1,0 +1,23 @@
+<div
+  [ngClass]="{
+    graph_main: graphMain,
+    graph_user: graphUser
+  }"
+>
+  <div
+    [ngClass]="{
+      graph_main__text: graphMain,
+      graph_user__text: graphUser
+    }"
+  >
+    Зміни у вазі
+  </div>
+  <div
+    echarts
+    [options]="chartOptions"
+    [ngClass]="{
+      graph_main__view: graphMain,
+      graph_user__view: graphUser
+    }"
+  ></div>
+</div>

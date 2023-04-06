@@ -1,0 +1,71 @@
+.login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 100vh;
+
+  &__title {
+    color: white;
+    text-align: center;
+    font-size: 25px;
+    font-weight: 500;
+  }
+  &__container {
+    padding: 65px 45px;
+    background-color: #131517;
+    border-radius: 15px;
+  }
+  &__form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 15px;
+    width: 400px;
+  }
+  &__btn {
+    &-box {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 15px;
+    }
+    &-cancel {
+      width: 130px;
+      background-color: #008e8a !important;
+    }
+    &-ok {
+      background-color: transparent !important;
+      color: #008e8a !important;
+      border: 1.5px solid #008e8a;
+      width: 130px;
+    }
+  }
+}
+
+::ng-deep .mdc-text-field--filled {
+  background-color: transparent !important;
+}
+::ng-deep .mdc-line-ripple::before {
+  border-bottom-color: rgba(49, 114, 49, 0.659) !important;
+}
+::ng-deep .mdc-line-ripple::after {
+  border-bottom-color: rgba(49, 114, 49, 0.659) !important;
+}
+::ng-deep .mdc-text-field__input {
+  color: white !important;
+  font-size: 16px !important;
+}
+
+::ng-deep
+  .mdc-floating-label--required:not(
+    .mdc-floating-label--hide-required-marker
+  )::after {
+  content: "" !important;
+}
+::ng-deep .mdc-text-field:not(.mdc-text-field--disabled) .mdc-floating-label {
+  color: rgba(255, 255, 255, 0.458);
+}
+::ng-deep
+  .mdc-text-field--invalid:not(.mdc-text-field--disabled)
+  .mdc-floating-label {
+  color: #f44336;
+}

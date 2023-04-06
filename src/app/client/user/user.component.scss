@@ -1,0 +1,81 @@
+.user {
+  padding: 0 70px 25px 40px;
+  &__title {
+    color: white;
+    letter-spacing: 0.8px;
+    font-weight: 500;
+    font-size: 28px;
+  }
+  &__container {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    padding: 40px 100px;
+    margin-top: 25px;
+    border-radius: 15px;
+    background-color: #131517;
+    &_left {
+      display: flex;
+      flex-direction: column;
+      gap: 35px;
+      height: 450px;
+      overflow: auto;
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+  }
+  &__box {
+    display: flex;
+    flex-direction: column;
+    &_flex {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+    &_weight {
+      &::ng-deep .mat-mdc-raised-button:not(.mdc-ripple-upgraded):focus {
+        box-shadow: none;
+      }
+    }
+    &_img {
+      align-items: center;
+    }
+  }
+  &__img {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+  }
+  &__text {
+    font-size: 30px;
+    color: white;
+  }
+  &__lable {
+    color: rgba(255, 255, 255, 0.458);
+    margin-bottom: 15px;
+  }
+  &__btn {
+    margin-top: 50px;
+    background-color: transparent !important;
+    color: #008e8a !important;
+    border: 1.5px solid #008e8a;
+    padding: 0 35px;
+    height: 45px !important;
+    width: 100%;
+    &_upd {
+      background-color: transparent !important;
+      box-shadow: unset;
+      padding: 0 0;
+    }
+    &_logout {
+      width: 100%;
+      margin-top: 20px;
+      height: 45px !important;
+      background-color: #008e8a !important;
+      color: white !important;
+    }
+  }
+  &__edit {
+    fill: white;
+  }
+}

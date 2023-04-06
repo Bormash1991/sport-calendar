@@ -23,9 +23,35 @@
   &__box {
     display: flex;
     align-items: center;
+    gap: 40px;
   }
   &__date {
     color: rgba(255, 255, 255, 0.637);
-    margin-right: 24px;
+  }
+  &__user {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: white;
+    text-decoration: none;
+    outline: none;
+    padding: 10px;
+    border-radius: 5px;
+    margin-right: -10px;
+    &_name {
+      font-size: 20px;
+      font-weight: 500;
+    }
+    &_role {
+      margin-top: 10px;
+      text-align: end;
+      font-size: 13px;
+      color: rgba(255, 255, 255, 0.458);
+    }
+    &_img {
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+    }
   }
 }

@@ -6,12 +6,14 @@
 
   <div class="reminder__empty">Список нагадувань пустий</div>
   <div class="reminder__list"></div>
-  <button
-    color="primary"
-    *ngIf="!areNoReminders"
-    class="reminder__btn"
-    mat-raised-button
-  >
-    <span>+</span> Створити подію
-  </button>
+  <div class="reminder__btn-box">
+    <button
+      color="primary"
+      *ngIf="!areNoReminders"
+      class="reminder__btn"
+      mat-raised-button
+    >
+      <span>+</span> Створити подію
+    </button>
+  </div>
 </div>

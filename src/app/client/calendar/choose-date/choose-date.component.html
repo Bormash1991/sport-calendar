@@ -1,1 +1,11 @@
-<p>choose-date works!</p>
+<div class="choosen-date">
+  <app-shared-calendar [inputDate]="true"></app-shared-calendar>
+  <button
+    (click)="openDialog()"
+    color="primary"
+    class="choosen-date__btn"
+    mat-raised-button
+  >
+    <span>+</span> Створити подію
+  </button>
+</div>

@@ -1,0 +1,27 @@
+<div class="event-item">
+  <div class="event-item__container">
+    <div class="event-item__text">{{ event[1].event }}</div>
+    <button
+      mat-icon-button
+      [matMenuTriggerFor]="menu"
+      aria-label="Example icon-button with a menu"
+    >
+      <mat-icon>more_vert</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item>
+        <mat-icon>delete</mat-icon>
+        <span>Видалити</span>
+      </button>
+      <button mat-menu-item>
+        <mat-icon>description</mat-icon>
+        <span>Детальніше</span>
+      </button>
+      <button mat-menu-item>
+        <mat-icon>done</mat-icon>
+        <span>Виконано</span>
+      </button>
+    </mat-menu>
+  </div>
+  <div class="event-item__time">{{ event[0] }} - {{ event[1].to }}</div>
+</div>

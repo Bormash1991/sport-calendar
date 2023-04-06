@@ -9,13 +9,17 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatCardModule } from '@angular/material/card';
-import { MatNativeDateModule } from '@angular/material/core';
+import { MatNativeDateModule, MatRippleModule } from '@angular/material/core';
+import { MatStepperModule } from '@angular/material/stepper';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatIconModule } from '@angular/material/icon';
+
 @NgModule({
   declarations: [],
   imports: [
     CommonModule,
     MatDialogModule,
-    MatFormFieldModule,
     MatInputModule,
     MatPaginatorModule,
     MatSelectModule,
@@ -24,11 +28,17 @@ import { MatNativeDateModule } from '@angular/material/core';
     MatDatepickerModule,
     MatCardModule,
     MatNativeDateModule,
+    MatStepperModule,
+    MatFormFieldModule,
+    MatDatepickerModule,
+    MatSnackBarModule,
+    MatRippleModule,
+    MatMenuModule,
+    MatIconModule,
   ],
   exports: [
     CommonModule,
     MatDialogModule,
-    MatFormFieldModule,
     MatInputModule,
     MatPaginatorModule,
     MatSelectModule,
@@ -37,6 +47,13 @@ import { MatNativeDateModule } from '@angular/material/core';
     MatDatepickerModule,
     MatCardModule,
     MatNativeDateModule,
+    MatStepperModule,
+    MatFormFieldModule,
+    MatDatepickerModule,
+    MatSnackBarModule,
+    MatRippleModule,
+    MatMenuModule,
+    MatIconModule,
   ],
 })
 export class MaterialModule {}

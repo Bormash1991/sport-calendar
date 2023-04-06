@@ -10,7 +10,6 @@ import {
   OwlNativeDateTimeModule,
 } from '@danielmoncada/angular-datetime-picker';
 import { FormsModule } from '@angular/forms';
-import { HomeModule } from './home/home.module';
 
 @NgModule({
   declarations: [ClientComponent, HeaderComponent, NavBarComponent],

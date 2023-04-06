@@ -1,0 +1,27 @@
+.event-item {
+  background-color: #131517;
+  border-radius: 15px;
+  border: 0.5px solid rgba(194, 187, 187, 0.233);
+  color: white;
+  padding: 15px 20px;
+  padding-top: 10px;
+  padding-right: 0px;
+  &__text {
+    font-size: 20px;
+    font-weight: 400;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+    width: 230px;
+  }
+  &__time {
+    margin-top: 15px;
+    font-size: 13px;
+    font-weight: 300;
+  }
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
