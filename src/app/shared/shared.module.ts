@@ -13,6 +13,9 @@ import { MaterialModule } from '../material/material.module';
 import { CreateEventModalComponent } from './components/create-event-modal/create-event-modal.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EventItemComponent } from './components/event-item/event-item.component';
+import { EventMoreModalComponent } from './components/event-more-modal/event-more-modal.component';
+import { NotificationItemComponent } from './components/notification-item/notification-item.component';
+import { CreateNotificationModalComponent } from './components/create-notification-modal/create-notification-modal.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +23,9 @@ import { EventItemComponent } from './components/event-item/event-item.component
     WeightGraphComponent,
     CreateEventModalComponent,
     EventItemComponent,
+    EventMoreModalComponent,
+    NotificationItemComponent,
+    CreateNotificationModalComponent,
   ],
   imports: [
     CommonModule,
@@ -33,6 +39,11 @@ import { EventItemComponent } from './components/event-item/event-item.component
     MaterialModule,
   ],
   providers: [AuthService, UsersService],
-  exports: [CalendarComponent, WeightGraphComponent, EventItemComponent],
+  exports: [
+    CalendarComponent,
+    WeightGraphComponent,
+    EventItemComponent,
+    NotificationItemComponent,
+  ],
 })
 export class SharedModule {}

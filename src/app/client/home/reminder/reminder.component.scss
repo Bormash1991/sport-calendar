@@ -6,8 +6,9 @@
   height: 100%;
   display: flex;
   justify-content: space-between;
-  align-items: left;
+
   flex-direction: column;
+  height: 250px;
   &__title {
     color: white;
     font-size: 22px;
@@ -22,5 +23,17 @@
     border: 1.5px solid #008e8a;
     padding: 0 35px;
     height: 45px !important;
+    width: 100%;
+  }
+  &__list {
+    margin-top: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    height: 96px;
+    overflow: auto;
+    &::-webkit-scrollbar {
+      display: none;
+    }
   }
 }

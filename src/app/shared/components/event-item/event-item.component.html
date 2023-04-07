@@ -1,6 +1,8 @@
 <div class="event-item">
   <div class="event-item__container">
-    <div class="event-item__text">{{ event[1].event }}</div>
+    <div [class]="'event-item__text ' + doneClass + ' ' + classForText">
+      {{ event[1].event }}
+    </div>
     <button
       mat-icon-button
       [matMenuTriggerFor]="menu"
@@ -9,17 +11,29 @@
       <mat-icon>more_vert</mat-icon>
     </button>
     <mat-menu #menu="matMenu">
-      <button mat-menu-item>
+      <button mat-menu-item (click)="delete(event[0])">
         <mat-icon>delete</mat-icon>
         <span>Видалити</span>
       </button>
-      <button mat-menu-item>
+      <button mat-menu-item (click)="openMoreModal()">
         <mat-icon>description</mat-icon>
         <span>Детальніше</span>
       </button>
-      <button mat-menu-item>
+      <button
+        mat-menu-item
+        *ngIf="event[1].done == false"
+        (click)="markDone(event[0])"
+      >
         <mat-icon>done</mat-icon>
         <span>Виконано</span>
+      </button>
+      <button
+        mat-menu-item
+        *ngIf="event[1].done == true"
+        (click)="markNotDone(event[0])"
+      >
+        <mat-icon>cancel</mat-icon>
+        <span>Не виконано</span>
       </button>
     </mat-menu>
   </div>

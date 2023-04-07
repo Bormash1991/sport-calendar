@@ -1,0 +1,59 @@
+.toggle {
+  &__event,
+  &__time {
+    color: white;
+    margin-left: 10px;
+  }
+  &__event {
+    font-size: 18px;
+  }
+  &__time {
+    font-size: 11px;
+    margin-top: 3px;
+  }
+}
+
+::ng-deep .mat-mdc-slide-toggle .mdc-switch {
+  width: 45px !important;
+}
+::ng-deep .mat-mdc-slide-toggle .mdc-switch .mdc-switch__track {
+  height: 25px !important;
+  border-radius: 20px !important;
+}
+::ng-deep .mat-mdc-slide-toggle .mdc-switch .mdc-switch__handle-track {
+  width: calc(100% - 25px) !important;
+}
+::ng-deep .mdc-switch__handle-track {
+  left: 3px !important;
+}
+::ng-deep .mdc-switch__icons {
+  display: none;
+}
+::ng-deep .mat-mdc-slide-toggle.mat-accent {
+  --mdc-switch-selected-focus-state-layer-color: transparent;
+  --mdc-switch-selected-handle-color: white;
+  --mdc-switch-selected-hover-state-layer-color: transparent;
+  --mdc-switch-selected-pressed-state-layer-color: transparent;
+  --mdc-switch-selected-focus-handle-color: white;
+  --mdc-switch-selected-hover-handle-color: white;
+  --mdc-switch-selected-pressed-handle-color: white;
+  --mdc-switch-selected-focus-track-color: #42cf44;
+  --mdc-switch-selected-hover-track-color: #42cf44;
+  --mdc-switch-selected-pressed-track-color: #42cf44;
+  --mdc-switch-selected-track-color: #42cf44;
+}
+::ng-deep .mat-mdc-slide-toggle {
+  --mdc-switch-disabled-selected-track-color: #4747508f;
+  --mdc-switch-disabled-unselected-track-color: #4747508f;
+  --mdc-switch-unselected-focus-state-layer-color: transparent;
+  --mdc-switch-unselected-pressed-state-layer-color: transparent;
+  --mdc-switch-unselected-hover-state-layer-color: transparent;
+  --mdc-switch-unselected-focus-track-color: #4747508f;
+  --mdc-switch-unselected-hover-track-color: #4747508f;
+  --mdc-switch-unselected-pressed-track-color: #4747508f;
+  --mdc-switch-unselected-track-color: #4747508f;
+  --mdc-switch-unselected-focus-handle-color: white;
+  --mdc-switch-unselected-hover-handle-color: white;
+  --mdc-switch-unselected-pressed-handle-color: white;
+  --mdc-switch-unselected-handle-color: white;
+}

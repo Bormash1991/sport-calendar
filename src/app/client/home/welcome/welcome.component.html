@@ -1,10 +1,17 @@
 <div class="welcome">
-  <h3 class="welcome__title">Привіт, {{ userName }}</h3>
-  <div class="welcome__text">
-    Ласкаво просимо до вашого щоденного календаря подій. Тут ви можете побачити
-    всі майбутні події, зустрічі та створити нові події.
+  <div class="welcome__container">
+    <h3 class="welcome__title">Привіт, {{ userName }}</h3>
+    <div class="welcome__text">
+      Ласкаво просимо до вашого щоденного календаря подій. Тут ви можете
+      побачити всі майбутні події, зустрічі та створити нові події.
+    </div>
   </div>
   <button (click)="openDialog()" class="welcome__btn" mat-raised-button>
     <span>+</span> Створити подію
   </button>
+  <img
+    src="assets/img/person.png"
+    alt="person with ball"
+    class="welcome__img"
+  />
 </div>

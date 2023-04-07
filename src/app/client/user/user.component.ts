@@ -32,7 +32,9 @@ export class UserComponent implements OnInit {
       this.userImg = user.img;
       const d = new Date();
       const month = d.getMonth();
-      this.currentUserWeight = `${user.weight[month]} кг`;
+      this.currentUserWeight = user.weight[month]
+        ? `${user.weight[month]} кг`
+        : 'Ви не зважувалися цьго місяця';
     });
     this.usersService.getUser().subscribe((user) => {
       if (user) {

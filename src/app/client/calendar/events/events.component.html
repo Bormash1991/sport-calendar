@@ -1,3 +1,12 @@
 <div class="events-box">
-  <div class="events-box__empty">На сьогодні нічого не заплановано</div>
+  <div *ngIf="!events.length" class="events-box__empty">
+    На цей день нічого не заплановано
+  </div>
+  <div class="events-box__container">
+    <app-event-item
+      [classForText]="'big'"
+      *ngFor="let item of events"
+      [event]="item"
+    ></app-event-item>
+  </div>
 </div>

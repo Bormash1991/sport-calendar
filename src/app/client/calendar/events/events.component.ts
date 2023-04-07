@@ -13,15 +13,25 @@ export class EventsComponent implements OnInit, OnDestroy {
     private dateService: DateService,
     private eventService: EventService
   ) {}
-
+  events: any[] = [];
   eventsSubj!: Subscription;
   ngOnInit(): void {
     this.eventsSubj = this.dateService
       .getDate()
       .pipe(switchMap((date) => this.eventService.getEventsFormDb(date)))
-      .subscribe((events) => console.log(events));
+      .subscribe((events: any) => {
+        this.events = [];
+        if (events) {
+          this.transfromEvents(events);
+        }
+      });
   }
   ngOnDestroy(): void {
     this.eventsSubj.unsubscribe();
+  }
+  transfromEvents(events: any[]) {
+    for (const [key, value] of Object.entries(events)) {
+      this.events.push([key, value]);
+    }
   }
 }

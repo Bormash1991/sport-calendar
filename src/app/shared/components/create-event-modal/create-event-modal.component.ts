@@ -53,7 +53,7 @@ export class CreateEventModalComponent implements OnInit {
           },
           error: (err) => {
             const message = err.message;
-            if (message == 'present time smaller') {
+            if (message == 'start time smaller') {
               this.snackBar.open(
                 'Час початку не може бути меншим ніж теп. час',
                 'Закрити',
@@ -69,8 +69,16 @@ export class CreateEventModalComponent implements OnInit {
                   duration: 10000,
                 }
               );
+            } else if (message == 'date smaller') {
+              this.snackBar.open(
+                'Не можна встановити на минулу дату',
+                'Закрити',
+                {
+                  duration: 10000,
+                }
+              );
             } else {
-              this.snackBar.open('Подія на такий час уже існує', 'Закрити', {
+              this.snackBar.open('Щось пішло не так', 'Закрити', {
                 duration: 10000,
               });
             }

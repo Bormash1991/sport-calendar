@@ -1,13 +1,24 @@
 .events-box {
-  padding: 25px;
+  padding: 0px 25px;
   background-color: #131517;
   border-radius: 15px;
-  height: 100%;
+  height: 459px;
   &__empty {
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     color: rgba(255, 255, 255, 0.458);
+  }
+  &__container {
+    padding: 25px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    overflow: auto;
+    height: 100%;
+    &::-webkit-scrollbar {
+      display: none;
+    }
   }
 }

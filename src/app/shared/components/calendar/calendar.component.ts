@@ -21,7 +21,7 @@ export class CalendarComponent implements OnInit {
       });
     } else {
       this.selected = new Date();
+      this.dateService.setNewDate(this.selected);
     }
-    this.dateService.setNewDate(this.selected);
   }
 }

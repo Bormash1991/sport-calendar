@@ -12,7 +12,8 @@
     overflow: hidden;
     text-overflow: ellipsis;
     -webkit-box-orient: vertical;
-    width: 230px;
+    width: 225px;
+    line-height: 1.28;
   }
   &__time {
     margin-top: 15px;
@@ -24,4 +25,10 @@
     align-items: center;
     justify-content: space-between;
   }
+}
+.done {
+  text-decoration: line-through;
+}
+.big {
+  width: 750px;
 }

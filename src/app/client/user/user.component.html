@@ -14,11 +14,7 @@
         <div class="user__lable">Вага на даний момент:</div>
         <div class="user__box_flex">
           <div class="user__text">
-            {{
-              currentUserWeight
-                ? currentUserWeight
-                : "Ви не зважувалися цьго місяця"
-            }}
+            {{ currentUserWeight }}
           </div>
           <button
             (click)="openDialog()"

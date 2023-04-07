@@ -7,7 +7,7 @@
 
 body::-webkit-scrollbar {
   width: 5px;
-  /* ширина всей полосы прокрутки */
+  display: none;
 }
 
 body::-webkit-scrollbar-track {

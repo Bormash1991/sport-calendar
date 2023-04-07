@@ -23,10 +23,16 @@ export class CalendarComponent implements OnInit, OnDestroy {
   ) {}
   events: any[] = [];
   eventsSubj!: Subscription;
+  currentDate!: Date;
   ngOnInit(): void {
     this.eventsSubj = this.dateService
       .getDate()
-      .pipe(switchMap((date) => this.eventService.getEventsFormDb(date)))
+      .pipe(
+        switchMap((date) => {
+          this.currentDate = date;
+          return this.eventService.getEventsFormDb(date);
+        })
+      )
       .subscribe((events: any) => {
         this.events = [];
         if (events) {
@@ -40,7 +46,7 @@ export class CalendarComponent implements OnInit, OnDestroy {
   transfromEvents(events: any[]) {
     for (const [key, value] of Object.entries(events)) {
       if (
-        this.dateService.getAccurateComparedTime(key) &&
+        this.dateService.getAccurateComparedTime(key, this.currentDate) &&
         this.events.length < 2
       ) {
         this.events.push([key, value]);

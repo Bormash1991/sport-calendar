@@ -27,12 +27,17 @@ export class EventService {
       );
   }
   setEvent(date: Date, fromTime: Date, toTime: Date, event: any) {
-    if (
-      this.dateService.getInaccurateComparedTime(
-        this.dateService.transformTime(fromTime)
-      )
-    ) {
-      return throwError(() => new Error('present time smaller'));
+    if (date <= this.dateService.compareDate(date)) {
+      if (
+        this.dateService.getInaccurateComparedTime(
+          this.dateService.transformTime(fromTime)
+        )
+      ) {
+        return throwError(() => new Error('start time smaller'));
+      }
+      if (date < this.dateService.compareDate(date)) {
+        return throwError(() => new Error('date smaller'));
+      }
     }
     if (fromTime >= toTime) {
       return throwError(() => new Error('fromTime same or smaller'));
@@ -48,6 +53,52 @@ export class EventService {
           .update({
             event: event,
             to: this.dateService.transformTime(toTime),
+            done: false,
+          })
+      )
+    );
+  }
+  deleteEvent(date: Date, time: string) {
+    return this.usersService
+      .getUser()
+      .pipe(
+        switchMap((user) =>
+          this.db
+            .object(
+              `events/${user?.uid}/${this.dateService.transformDate(
+                date
+              )}/${time}`
+            )
+            .remove()
+        )
+      );
+  }
+  markDone(date: Date, time: string) {
+    return this.usersService.getUser().pipe(
+      switchMap((user) =>
+        this.db
+          .object(
+            `events/${user?.uid}/${this.dateService.transformDate(
+              date
+            )}/${time}`
+          )
+          .update({
+            done: true,
+          })
+      )
+    );
+  }
+  markNotDone(date: Date, time: string) {
+    return this.usersService.getUser().pipe(
+      switchMap((user) =>
+        this.db
+          .object(
+            `events/${user?.uid}/${this.dateService.transformDate(
+              date
+            )}/${time}`
+          )
+          .update({
+            done: false,
           })
       )
     );

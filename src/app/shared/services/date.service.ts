@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject,  } from 'rxjs';
-
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -43,10 +42,27 @@ export class DateService {
     );
     return { now, targetTime };
   }
-
-  getAccurateComparedTime(formatTime: string) {
+  compareDate(date: Date) {
+    const now = new Date();
+    const hours = date.getHours();
+    const minutes = date.getMinutes();
+    const seconds = date.getSeconds();
+    const millis = date.getMilliseconds();
+    return new Date(
+      now.getFullYear(),
+      now.getMonth(),
+      now.getDate(),
+      Number(hours),
+      Number(minutes),
+      Number(seconds),
+      Number(millis)
+    );
+  }
+  getAccurateComparedTime(formatTime: string, currentDate: Date) {
     const { now, targetTime } = this.compareTime(formatTime);
-
+    if (currentDate < now) {
+      return false;
+    }
     if (targetTime >= now) {
       return true;
     }
@@ -54,7 +70,6 @@ export class DateService {
   }
   getInaccurateComparedTime(formatTime: string) {
     const { now, targetTime } = this.compareTime(formatTime);
-
     if (targetTime < now) {
       return true;
     }
