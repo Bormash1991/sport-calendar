@@ -7,7 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ReminderComponent implements OnInit {
   areNotReminders: boolean = false;
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    console.log(new Date().getTime());
+  }
   checkNotifications() {
     if ('Notification' in window) {
       if (Notification.permission !== 'granted') {
