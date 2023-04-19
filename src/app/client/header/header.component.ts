@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { take } from 'rxjs';
+import { Subscription, take } from 'rxjs';
 import { DateService } from 'src/app/shared/services/date.service';
 import { UsersService } from 'src/app/shared/services/users.service';
 
@@ -14,18 +14,36 @@ export class HeaderComponent implements OnInit, OnDestroy {
   userImg!: string;
   date!: string;
   timer!: NodeJS.Timeout;
+  subj!: Subscription;
+  subjAdmin!: Subscription;
   constructor(
     private usersService: UsersService,
     private dateService: DateService
   ) {}
   ngOnDestroy(): void {
     clearTimeout(this.timer);
+    this.subj.unsubscribe();
+    this.subjAdmin.unsubscribe();
   }
   ngOnInit(): void {
-    this.usersService.getUserInfo().subscribe((user: any) => {
-      this.userName = user.name;
-      this.userImg = user.img;
+    this.subj = this.usersService.getUserInfo().subscribe({
+      next: (user) => {
+        if (user) {
+          this.userName = user.name;
+          this.userImg = user.img;
+        }
+      },
+      error: () => {},
     });
+    this.subjAdmin = this.usersService
+      .checkAdmin()
+      .pipe()
+      .subscribe({
+        next: (checkResponse) => {
+          this.checkAdmin = checkResponse;
+        },
+        error: () => {},
+      });
     this.date = this.dateService.getMonthAndYear();
     this.timer = setTimeout(() => {
       if (this.date != this.dateService.getMonthAndYear()) {

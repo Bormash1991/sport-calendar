@@ -4,6 +4,7 @@ import { EventService } from '../../services/event.service';
 import { switchMap, take } from 'rxjs';
 import { EventMoreModalComponent } from '../event-more-modal/event-more-modal.component';
 import { MatDialog } from '@angular/material/dialog';
+import { UserEvent } from 'src/app/models/event.interface';
 
 @Component({
   selector: 'app-event-item',
@@ -11,7 +12,7 @@ import { MatDialog } from '@angular/material/dialog';
   styleUrls: ['./event-item.component.scss'],
 })
 export class EventItemComponent implements OnInit {
-  @Input() event: any;
+  @Input() event!: [string, UserEvent];
   @Input() classForText: string = '';
   doneClass = '';
   constructor(

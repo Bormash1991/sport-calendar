@@ -4,7 +4,8 @@
 @import "./styles/container.scss";
 @import "./styles/font.scss";
 @import "@danielmoncada/angular-datetime-picker/assets/style/picker.min.css";
-
+@import "ngx-owl-carousel-o/lib/styles/scss/owl.carousel";
+@import "ngx-owl-carousel-o/lib/styles/scss/owl.theme.default";
 body::-webkit-scrollbar {
   width: 5px;
   display: none;
@@ -17,4 +18,8 @@ body::-webkit-scrollbar-track {
 body::-webkit-scrollbar-thumb {
   background-color: rgb(113, 113, 118); /* цвет бегунка */
   border-radius: 20px; /* округлось бегунка */
+}
+.owl-theme .owl-dots .owl-dot.active span,
+.owl-theme .owl-dots .owl-dot:hover span {
+  background: #008e8a;
 }

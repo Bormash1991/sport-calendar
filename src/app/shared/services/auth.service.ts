@@ -18,4 +18,7 @@ export class AuthService {
       this.router.navigate(['/login']);
     });
   }
+  resetPassword(email: string) {
+    return this.fireAuth.sendPasswordResetEmail(email);
+  }
 }

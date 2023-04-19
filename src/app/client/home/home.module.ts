@@ -8,6 +8,7 @@ import { CalendarComponent } from './calendar/calendar.component';
 import { ReminderComponent } from './reminder/reminder.component';
 import { NewsComponent } from './news/news.component';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,12 @@ import { SharedModule } from 'src/app/shared/shared.module';
     ReminderComponent,
     NewsComponent,
   ],
-  imports: [CommonModule, HomeRoutingModule, MaterialModule, SharedModule],
+  imports: [
+    CommonModule,
+    HomeRoutingModule,
+    MaterialModule,
+    SharedModule,
+    RouterModule,
+  ],
 })
 export class HomeModule {}

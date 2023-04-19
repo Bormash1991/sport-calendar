@@ -1,0 +1,18 @@
+<h1 class="modal__title" mat-dialog-title>Детальніше</h1>
+<div class="modal" mat-dialog-content>
+  <h3 class="modal__subtitle">Подія:</h3>
+  <div class="modal__text">{{ this.data.event[1].text }}</div>
+  <h3 class="modal__subtitle">Час:</h3>
+  <div class="modal__text">
+    {{ this.data.event[0] }}
+  </div>
+  <h3 class="modal__subtitle">Стан:</h3>
+  <div class="modal__text">
+    {{ this.data.event[1].active ? "Ввімкнено" : "Вимкнено" }}
+  </div>
+</div>
+<div class="modal__btn-box" mat-dialog-actions>
+  <button class="modal__btn-ok" color="primary" mat-button (click)="close()">
+    OK
+  </button>
+</div>

@@ -1,3 +1,38 @@
 <div class="exercise">
-  <h1 class="exercise__title">Вправи</h1>
+  <div class="exercise__container exercise__container_title">
+    <h1 class="exercise__title">Вправи</h1>
+    <button
+      color="primary"
+      class="exercise__btn"
+      (click)="openDialog()"
+      mat-raised-button
+      *ngIf="checkAdmin"
+    >
+      <svg
+        class="exercise__edit"
+        height="25px"
+        width="25px"
+        viewBox="0 96 960 960"
+      >
+        <use href="assets/sprite.svg#icon-edit"></use>
+      </svg>
+    </button>
+  </div>
+  <div
+    *ngIf="exercises.length"
+    class="exercise__container exercise__container_items"
+    appScroll
+  >
+    <app-exercise-item
+      *ngFor="let exercise of exercises"
+      [item]="exercise"
+      [isAdmin]="checkAdmin"
+    ></app-exercise-item>
+  </div>
+  <div
+    class="exercise__container exercise__container_empty"
+    *ngIf="!exercises.length"
+  >
+    Вправи відсутні
+  </div>
 </div>

@@ -2,9 +2,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-
   height: 100vh;
-
+  padding: 0 10px;
   &__title {
     color: white;
     text-align: center;
@@ -12,15 +11,25 @@
     font-weight: 500;
   }
   &__container {
-    padding: 65px 45px;
+    padding: 30px 20px;
     background-color: #131517;
     border-radius: 15px;
+    width: 100%;
+    &_link {
+      margin-top: 25px;
+      color: white;
+      font-size: 14px;
+      letter-spacing: 0.6px;
+    }
+  }
+  &__link {
+    text-decoration: none;
+    color: #2859ff;
   }
   &__form {
     display: flex;
     flex-direction: column;
-    margin-top: 15px;
-    width: 400px;
+    margin-top: 30px;
   }
   &__btn {
     &-box {
@@ -28,15 +37,46 @@
       justify-content: space-around;
       margin-top: 15px;
     }
-    &-cancel {
-      width: 130px;
-      background-color: #008e8a !important;
+    &-forgot {
+      background-color: transparent !important;
+      border-radius: 4px;
+      display: block;
+      display: flex;
+      align-items: center;
+      padding: 0 5px;
+      color: rgba(255, 255, 255, 0.458);
+      text-decoration: none;
+
+      &:hover {
+        background-color: rgba(255, 255, 255, 0.041) !important;
+      }
     }
     &-ok {
       background-color: transparent !important;
       color: #008e8a !important;
       border: 1.5px solid #008e8a;
-      width: 130px;
+      width: 120px;
+    }
+  }
+}
+@media (min-width: 768px) {
+  .login {
+    padding: auto;
+    &__container {
+      padding: 50px 45px;
+      width: 400px;
+    }
+
+    &__btn {
+      &-forgot {
+        padding: 0 10px;
+      }
+      &-ok {
+        background-color: transparent !important;
+        color: #008e8a !important;
+        border: 1.5px solid #008e8a;
+        width: 130px;
+      }
     }
   }
 }

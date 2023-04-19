@@ -31,7 +31,7 @@ export class RegistrationComponent implements OnInit {
         Validators.required,
         Validators.minLength(1),
         Validators.maxLength(15),
-        Validators.pattern('[a-zA-Zа-яА-ЯёЁіІїЇєЄґҐ]+'),
+        Validators.pattern('^[a-zA-Zа-яА-ЯіІїЇєЄ\\s]+$'),
       ],
     ],
     date: ['', [Validators.required]],

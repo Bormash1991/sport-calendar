@@ -1,19 +1,24 @@
 .nav {
-  padding-top: 40px;
   svg {
     fill: white;
   }
+  background-color: #292c36;
+  border-radius: 53px;
   &__list {
     display: flex;
-    flex-direction: column;
-    gap: 15px;
+    padding: 0px 15px;
   }
-
+  &__item {
+    border-radius: 50%;
+  }
   &__link {
-    padding: 15px;
-    padding-left: 70px;
     display: block;
+    transform: scale(0.75);
+    border-radius: 50%;
     outline: none;
+    &:active {
+      -webkit-tap-highlight-color: transparent;
+    }
     &__circle {
       height: 50px;
       width: 50px;
@@ -28,7 +33,26 @@
     &_active {
       outline: 2px solid rgba(49, 114, 49, 0.659);
       border-left: none;
-      border-radius: 0 40px 40px 0;
+      border-radius: 50%;
+    }
+  }
+}
+@media (min-width: 1440px) {
+  .nav {
+    padding-top: 40px;
+    background-color: transparent;
+    &__list {
+      flex-direction: column;
+      gap: 15px;
+      padding: 0;
+    }
+    &__link {
+      padding: 15px;
+      padding-left: 70px;
+      transform: scale(1);
+      &_active {
+        border-radius: 0 40px 40px 0;
+      }
     }
   }
 }

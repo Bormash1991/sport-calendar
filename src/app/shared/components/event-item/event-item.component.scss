@@ -5,14 +5,17 @@
   color: white;
   padding: 15px 20px;
   padding-top: 10px;
-  padding-right: 0px;
+  padding-right: 8px;
+  button {
+    margin-top: 3px;
+  }
   &__text {
     font-size: 20px;
     font-weight: 400;
     overflow: hidden;
     text-overflow: ellipsis;
     -webkit-box-orient: vertical;
-    width: 225px;
+    width: 170px;
     line-height: 1.28;
   }
   &__time {
@@ -26,9 +29,29 @@
     justify-content: space-between;
   }
 }
+@media (min-width: 768px) {
+  .event-item {
+    &__text {
+      width: 215px;
+    }
+  }
+  .big {
+    width: 750px;
+  }
+}
 .done {
   text-decoration: line-through;
 }
 .big {
-  width: 750px;
+  width: 170px;
+}
+::ng-deep .mdc-menu-surface {
+  background-color: #282525;
+}
+::ng-deep .mdc-list-item__primary-text,
+.mat-mdc-menu-item .mat-icon-no-color {
+  color: rgba(255, 255, 255, 0.852);
+}
+::ng-deep .mat-mdc-menu-item:hover:not([disabled]) {
+  background: rgba(0, 0, 0, 0.112);
 }

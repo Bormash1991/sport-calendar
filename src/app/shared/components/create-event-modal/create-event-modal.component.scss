@@ -1,5 +1,4 @@
 .modal {
-  width: 400px;
   display: flex;
   flex-direction: column;
   align-items: stretch;
@@ -54,6 +53,27 @@
       border: 1.5px solid #008e8a;
       width: 130px;
     }
+  }
+}
+::ng-deep .mdc-dialog .mdc-dialog__surface {
+  min-width: 300px !important;
+}
+
+::ng-deep .mdc-dialog__surface {
+  padding: 5px 0 !important;
+}
+::ng-deep .mdc-dialog .mdc-dialog__content {
+  padding: 20px 20px;
+}
+@media (min-width: 768px) {
+  ::ng-deep .mdc-dialog__container {
+    width: 400px !important;
+  }
+  ::ng-deep .mdc-dialog__surface {
+    padding: 30px 40px;
+  }
+  ::ng-deep .mdc-dialog .mdc-dialog__content {
+    padding: 20px 24px 20px 24px;
   }
 }
 textarea {

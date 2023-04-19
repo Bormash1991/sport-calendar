@@ -3,13 +3,29 @@
   border-radius: 15px;
   display: flex;
   flex-direction: column;
-  padding: 25px;
+  padding: 25px 15px;
   &__btn {
-    margin-top: 40px;
+    margin-top: 20px;
     background-color: transparent !important;
     color: #008e8a !important;
     border: 1.5px solid #008e8a;
     padding: 0 35px;
     height: 45px !important;
+  }
+}
+// @media (min-width: 768px) {
+//   .choosen-date {
+//     padding: 25px 150px;
+//     &__btn {
+//       margin-top: 40px;
+//     }
+//   }
+// }
+@media (min-width: 1024px) {
+  .choosen-date {
+    padding: 25px;
+    &__btn {
+      margin-top: 40px;
+    }
   }
 }

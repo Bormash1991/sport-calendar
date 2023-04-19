@@ -1,6 +1,7 @@
 import { Component, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { DateService } from '../../services/date.service';
+import { UserEvent } from 'src/app/models/event.interface';
 
 @Component({
   selector: 'app-event-more-modal',
@@ -10,12 +11,10 @@ import { DateService } from '../../services/date.service';
 export class EventMoreModalComponent {
   constructor(
     public dialogRef: MatDialogRef<EventMoreModalComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: any,
-    private dateService: DateService
+    @Inject(MAT_DIALOG_DATA) public data: { event: [string, UserEvent] }
   ) {}
 
   close() {
-    console.log(this.data);
     this.dialogRef.close();
   }
 }

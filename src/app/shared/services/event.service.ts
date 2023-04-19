@@ -3,6 +3,8 @@ import { AngularFireDatabase } from '@angular/fire/compat/database';
 import { UsersService } from './users.service';
 import { DateService } from './date.service';
 import { switchMap, throwError } from 'rxjs';
+import { Events } from 'src/app/models/events.interface';
+import { UserEvent } from 'src/app/models/event.interface';
 
 @Injectable({
   providedIn: 'root',
@@ -19,14 +21,14 @@ export class EventService {
       .pipe(
         switchMap((user) =>
           this.db
-            .object(
+            .object<Events>(
               `events/${user?.uid}/${this.dateService.transformDate(date)}`
             )
             .valueChanges()
         )
       );
   }
-  setEvent(date: Date, fromTime: Date, toTime: Date, event: any) {
+  setEvent(date: Date, fromTime: Date, toTime: Date, event: string) {
     if (date <= this.dateService.compareDate(date)) {
       if (
         this.dateService.getInaccurateComparedTime(

@@ -1,6 +1,6 @@
 <div class="login">
   <div class="login__container">
-    <h1 class="login__title">Log In</h1>
+    <h1 class="login__title">Увійти в аккаунт</h1>
     <form class="login__form" [formGroup]="form">
       <mat-form-field>
         <mat-label> Email </mat-label>
@@ -11,10 +11,16 @@
         <input matInput type="password" formControlName="password" />
       </mat-form-field>
     </form>
+
     <div class="login__btn-box">
-      <button mat-raised-button color="primary" class="login__btn-cancel">
-        Cancel
-      </button>
+      <a
+        matRipple
+        [matRippleColor]="'rgba(255, 255, 255, 0.1)'"
+        class="login__btn-forgot"
+        routerLink="/reset"
+      >
+        Забули пароль?
+      </a>
       <button
         mat-raised-button
         color="primary"
@@ -23,6 +29,10 @@
       >
         OK
       </button>
+    </div>
+    <div class="login__container_link">
+      Не маєте аккаунту
+      <a routerLink="/registration" class="login__link">Зареєструватися</a>
     </div>
   </div>
 </div>

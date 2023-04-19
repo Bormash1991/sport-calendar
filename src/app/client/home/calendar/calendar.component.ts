@@ -8,6 +8,8 @@ import {
   ViewEncapsulation,
 } from '@angular/core';
 import { Subscription, switchMap } from 'rxjs';
+import { UserEvent } from 'src/app/models/event.interface';
+import { Events } from 'src/app/models/events.interface';
 import { DateService } from 'src/app/shared/services/date.service';
 import { EventService } from 'src/app/shared/services/event.service';
 
@@ -21,7 +23,7 @@ export class CalendarComponent implements OnInit, OnDestroy {
     private dateService: DateService,
     private eventService: EventService
   ) {}
-  events: any[] = [];
+  events: [string, UserEvent][] = [];
   eventsSubj!: Subscription;
   currentDate!: Date;
   ngOnInit(): void {
@@ -33,17 +35,20 @@ export class CalendarComponent implements OnInit, OnDestroy {
           return this.eventService.getEventsFormDb(date);
         })
       )
-      .subscribe((events: any) => {
-        this.events = [];
-        if (events) {
-          this.transfromEvents(events);
-        }
+      .subscribe({
+        next: (events) => {
+          this.events = [];
+          if (events) {
+            this.transfromEvents(events);
+          }
+        },
+        error: () => {},
       });
   }
   ngOnDestroy(): void {
     this.eventsSubj.unsubscribe();
   }
-  transfromEvents(events: any[]) {
+  transfromEvents(events: Events) {
     for (const [key, value] of Object.entries(events)) {
       if (
         this.dateService.getAccurateComparedTime(key, this.currentDate) &&

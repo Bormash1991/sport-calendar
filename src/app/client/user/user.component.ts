@@ -1,15 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { AuthService } from 'src/app/shared/services/auth.service';
 import { UsersService } from 'src/app/shared/services/users.service';
 import { UpdWeightModalComponent } from './upd-weight-modal/upd-weight-modal.component';
+import { Subscription, take } from 'rxjs';
+import { NotificationService } from 'src/app/shared/services/notification.service';
+import { User } from 'src/app/models/user.interface';
 
 @Component({
   selector: 'app-user',
   templateUrl: './user.component.html',
   styleUrls: ['./user.component.scss'],
 })
-export class UserComponent implements OnInit {
+export class UserComponent implements OnInit, OnDestroy {
   userName!: string;
   checkAdmin: boolean = false;
   userDate!: string;
@@ -18,28 +21,43 @@ export class UserComponent implements OnInit {
   userWeight!: string[];
   year!: number;
   uid!: string;
+  userInfoSubj!: Subscription;
+  userSubj!: Subscription;
   constructor(
     private usersService: UsersService,
     private authService: AuthService,
-    public dialog: MatDialog
+    public dialog: MatDialog,
+    private notificationService: NotificationService
   ) {}
+  ngOnDestroy(): void {
+    this.userInfoSubj.unsubscribe();
+    this.userSubj.unsubscribe();
+  }
   ngOnInit(): void {
-    this.usersService.getUserInfo().subscribe((user: any) => {
-      this.userName = user.name;
-      this.userDate = user.date;
-      this.userWeight = user.weight;
-      this.year = user.year;
-      this.userImg = user.img;
-      const d = new Date();
-      const month = d.getMonth();
-      this.currentUserWeight = user.weight[month]
-        ? `${user.weight[month]} кг`
-        : 'Ви не зважувалися цьго місяця';
+    this.userInfoSubj = this.usersService.getUserInfo().subscribe({
+      next: (user) => {
+        if (user) {
+          this.userName = user.name;
+          this.userDate = user.date;
+          this.userWeight = user.weight;
+          this.year = user.year;
+          this.userImg = user.img;
+          const d = new Date();
+          const month = d.getMonth();
+          this.currentUserWeight = user.weight[month]
+            ? `${user.weight[month]} кг`
+            : 'Ви не зважувалися цьго місяця';
+        }
+      },
+      error: () => {},
     });
-    this.usersService.getUser().subscribe((user) => {
-      if (user) {
-        this.uid = user.uid;
-      }
+    this.userSubj = this.usersService.getUser().subscribe({
+      next: (user) => {
+        if (user) {
+          this.uid = user.uid;
+        }
+      },
+      error: () => {},
     });
   }
   selectFile(): void {
@@ -55,7 +73,14 @@ export class UserComponent implements OnInit {
   }
 
   logOut() {
-    this.authService.logOut();
+    this.notificationService
+      .requestPermission()
+      .pipe(take(1))
+      .subscribe((token) => {
+        if (token) {
+          this.notificationService.deleteTokenAndLogOut(token);
+        }
+      });
   }
   openDialog() {
     this.dialog.open(UpdWeightModalComponent, {

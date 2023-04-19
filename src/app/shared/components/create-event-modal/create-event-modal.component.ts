@@ -5,6 +5,7 @@ import { UsersService } from '../../services/users.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { DateService } from '../../services/date.service';
 import { EventService } from '../../services/event.service';
+import { take } from 'rxjs';
 
 @Component({
   selector: 'app-create-event-modal',
@@ -24,7 +25,10 @@ export class CreateEventModalComponent implements OnInit {
   toTime: Date = new Date();
   date!: Date;
   ngOnInit(): void {
-    this.dateService.getDate().subscribe((date) => (this.date = date));
+    this.dateService
+      .getDate()
+      .pipe(take(1))
+      .subscribe((date) => (this.date = date));
   }
   form: FormGroup = this.fb.group({
     event: [
@@ -36,7 +40,6 @@ export class CreateEventModalComponent implements OnInit {
         Validators.pattern('^[a-zA-Zа-яА-ЯіІїЇєЄ\\s]+$'),
       ],
     ],
-    time: '',
   });
 
   upd() {
@@ -44,6 +47,7 @@ export class CreateEventModalComponent implements OnInit {
     if (!this.form.invalid) {
       this.eventService
         .setEvent(this.date, this.fromTime, this.toTime, event)
+        .pipe(take(1))
         .subscribe({
           next: () => {
             this.snackBar.open('Подію додано', 'Закрити', {

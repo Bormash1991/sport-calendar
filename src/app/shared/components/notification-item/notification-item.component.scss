@@ -1,20 +1,51 @@
 .toggle {
+  width: 100%;
+
   &__event,
   &__time {
-    color: white;
     margin-left: 10px;
   }
   &__event {
     font-size: 18px;
+    width: 150px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
   }
   &__time {
     font-size: 11px;
     margin-top: 3px;
   }
+  &__box {
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 }
-
+::ng-deep .mat-mdc-icon-button.mat-mdc-button-base {
+  padding: 0;
+  height: auto;
+  width: auto;
+}
+::ng-deep .mdc-menu-surface {
+  background-color: #282525;
+}
+::ng-deep .mdc-list-item__primary-text,
+.mat-mdc-menu-item .mat-icon-no-color {
+  color: rgba(255, 255, 255, 0.852);
+}
+::ng-deep .mat-mdc-menu-item:hover:not([disabled]) {
+  background: rgba(0, 0, 0, 0.112);
+}
+::ng-deep .mdc-form-field > label {
+  width: 100%;
+}
+::ng-deep .mdc-form-field {
+  width: 100%;
+}
 ::ng-deep .mat-mdc-slide-toggle .mdc-switch {
-  width: 45px !important;
+  width: 44px !important;
 }
 ::ng-deep .mat-mdc-slide-toggle .mdc-switch .mdc-switch__track {
   height: 25px !important;

@@ -1,0 +1,21 @@
+<a
+  class="post"
+  (click)="redirect($event)"
+  (mouseenter)="showBtn()"
+  (mouseleave)="hideBtn()"
+>
+  <button
+    matRipple
+    [matRippleColor]="'rgba(255, 255, 255, 0.1)'"
+    [class]="'post__item ' + btnClass"
+    (click)="deletePost()"
+    *ngIf="isAdmin"
+  >
+    <mat-icon>delete</mat-icon>
+  </button>
+  <div class="post__box">
+    <img [src]="postItem[1].img" alt="" class="post__img" />
+  </div>
+  <h3 class="post__title">{{ postItem[1].title }}</h3>
+  <div class="post__text">{{ postItem[1].text }}</div>
+</a>

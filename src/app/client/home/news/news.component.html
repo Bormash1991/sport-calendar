@@ -1,4 +1,10 @@
 <div class="news">
   <h3 class="news__title">Новини</h3>
-  <div class="news__empty">Поки що новин немає</div>
+  <div class="news__list" *ngIf="posts.length">
+    <app-small-post-item
+      *ngFor="let post of posts"
+      [post]="post"
+    ></app-small-post-item>
+  </div>
+  <div class="news__empty" *ngIf="!posts.length">Поки що новин немає</div>
 </div>

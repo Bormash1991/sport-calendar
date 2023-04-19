@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ClientComponent } from './client.component';
+import { PostItemComponent } from './posts/post-item/post-item.component';
+import { PostDetailsComponent } from './posts/post-details/post-details.component';
 
 const routes: Routes = [
   {
@@ -24,6 +26,7 @@ const routes: Routes = [
         loadChildren: () =>
           import('./posts/posts.module').then((m) => m.PostsModule),
       },
+      { path: 'posts/:id', component: PostDetailsComponent },
       {
         path: 'exercise',
         loadChildren: () =>

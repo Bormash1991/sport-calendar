@@ -1,22 +1,27 @@
 <div class="reminder">
   <h3 class="reminder__title">Нагадування</h3>
-  <div *ngIf="areNotReminders" class="reminder__not">
+  <div *ngIf="!areNotNotif" class="reminder__text">
     Ваш браузер не підтримує нагадування
   </div>
-
-  <!-- <div class="reminder__empty">Список нагадувань пустий</div> -->
-  <div class="reminder__list">
-    <app-notification-item></app-notification-item>
-    <app-notification-item></app-notification-item>
-    <app-notification-item></app-notification-item>
+  <div *ngIf="!notifAccess" class="reminder__text">
+    Ви не надали доступ до повідомлень
+  </div>
+  <div class="reminder__text" *ngIf="!notifications.length && notifAccess">
+    Список нагадувань пустий
+  </div>
+  <div class="reminder__list" *ngIf="notifications.length && notifAccess">
+    <app-notification-item
+      *ngFor="let notif of notifications"
+      [notification]="notif"
+    ></app-notification-item>
   </div>
   <div class="reminder__btn-box">
     <button
       color="primary"
-      *ngIf="!areNotReminders"
+      *ngIf="showSome"
       class="reminder__btn"
       mat-raised-button
-      (click)="checkNotifications()"
+      (click)="openDialog()"
     >
       <span>+</span> Створити подію
     </button>

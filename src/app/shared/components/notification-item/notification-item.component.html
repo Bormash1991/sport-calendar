@@ -1,4 +1,26 @@
-<mat-slide-toggle class="toggle" ngModel name="enableWifi">
-  <div class="toggle__event">Подія якась</div>
-  <div class="toggle__time">10:00</div>
+<mat-slide-toggle class="toggle" (change)="toggleChange()" [(ngModel)]="value">
+  <div class="toggle__box">
+    <div class="toggle__box_text">
+      <div class="toggle__event">{{ notification[1].text }}</div>
+      <div class="toggle__time">{{ notification[0] }}</div>
+    </div>
+    <button
+      mat-icon-button
+      [matMenuTriggerFor]="menu"
+      aria-label="Example icon-button with a menu"
+    >
+      <mat-icon>more_vert</mat-icon>
+    </button>
+  </div>
+
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item (click)="deleteNotif()">
+      <mat-icon>delete</mat-icon>
+      <span>Видалити</span>
+    </button>
+    <button mat-menu-item (click)="openMoreModal()">
+      <mat-icon>description</mat-icon>
+      <span>Детальніше</span>
+    </button>
+  </mat-menu>
 </mat-slide-toggle>

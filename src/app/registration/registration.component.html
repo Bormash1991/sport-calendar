@@ -1,7 +1,7 @@
 <div class="reg">
   <div class="reg__container">
     <mat-stepper orientation="vertical" [linear]="true" #stepper>
-      <mat-step [stepControl]="firstFormGroup">
+      <mat-step class="reg__stepper" [stepControl]="firstFormGroup">
         <form [formGroup]="firstFormGroup" class="reg__form">
           <ng-template matStepLabel>Введіть email та пароль</ng-template>
           <mat-form-field>

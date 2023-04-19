@@ -1,0 +1,10 @@
+<div class="post">
+  <div class="post__container" *ngIf="!showError && post">
+    <div class="post__box">
+      <img [src]="post.img" alt="" class="post__img" />
+      <h3 class="post__title">{{ post.title }}</h3>
+    </div>
+    <div class="post__text">{{ post.text }}</div>
+  </div>
+  <div *ngIf="showError" class="post__not-found">Такого посту не існує</div>
+</div>

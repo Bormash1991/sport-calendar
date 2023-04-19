@@ -1,0 +1,23 @@
+.post {
+  background-color: #131517;
+  border-radius: 15px;
+  border: 0.5px solid rgba(194, 187, 187, 0.233);
+  color: white;
+  padding: 20px 20px;
+  padding-top: 10px;
+  padding-right: 8px;
+  display: block;
+  text-decoration: none;
+  &__title {
+    font-size: 20px;
+    font-weight: 400;
+    overflow: hidden;
+    line-height: 1.28;
+    max-width: 190px;
+    word-wrap: break-word;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+  }
+}

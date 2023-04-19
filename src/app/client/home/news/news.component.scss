@@ -14,5 +14,12 @@
     justify-content: center;
     align-items: center;
     color: rgba(255, 255, 255, 0.458);
+    padding: 40px 0;
+  }
+  &__list {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
   }
 }

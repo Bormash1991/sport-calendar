@@ -2,13 +2,15 @@
   padding: 0px 25px;
   background-color: #131517;
   border-radius: 15px;
-  height: 459px;
+  height: 100%;
   &__empty {
-    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     color: rgba(255, 255, 255, 0.458);
+    text-align: center;
+    height: inherit;
+    padding: 70px 0;
   }
   &__container {
     padding: 25px 0;
@@ -16,9 +18,33 @@
     flex-direction: column;
     gap: 20px;
     overflow: auto;
-    height: 100%;
+    height: inherit;
     &::-webkit-scrollbar {
       display: none;
+    }
+  }
+}
+@media (min-width: 768px) {
+  .events-box {
+    &__container {
+      max-height: 418.05px;
+    }
+    &__empty {
+      padding: 0;
+    }
+  }
+}
+@media (min-width: 1024px) {
+  .events-box {
+    &__container {
+      max-height: 436.25px;
+    }
+  }
+}
+@media (min-width: 1440px) {
+  .events-box {
+    &__container {
+      max-height: 433.1px;
     }
   }
 }

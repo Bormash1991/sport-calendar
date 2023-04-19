@@ -1,7 +1,13 @@
 <div class="wrapper">
   <app-header></app-header>
   <div class="wrapper__box">
-    <app-nav-bar></app-nav-bar>
+    <app-nav-bar [class]="'wrapper__nav ' + navStatus"></app-nav-bar>
     <router-outlet></router-outlet>
   </div>
+  <app-notif-popup
+    [notifBody]="notifBody"
+    *ngIf="notifBody"
+    [class]="'notif ' + activityClass"
+    (closePopup)="closePopup()"
+  ></app-notif-popup>
 </div>

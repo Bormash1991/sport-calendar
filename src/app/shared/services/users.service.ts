@@ -1,9 +1,10 @@
 import { Injectable } from '@angular/core';
 import { AngularFireDatabase } from '@angular/fire/compat/database';
-import { switchMap } from 'rxjs';
+import { map, switchMap, take } from 'rxjs';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { AngularFireStorage } from '@angular/fire/compat/storage';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { User } from 'src/app/models/user.interface';
 @Injectable({
   providedIn: 'root',
 })
@@ -20,17 +21,20 @@ export class UsersService {
     this.storage
       .upload(filePath, file)
       .then(() => {
-        fileRef.getDownloadURL().subscribe((url) => {
-          this.db
-            .object(`users/${uid}`)
-            .update({
-              img: url,
-            })
-            .catch(() =>
-              this.snackBar.open('Щось пішло не так', 'Закрити', {
-                duration: 10000,
+        fileRef.getDownloadURL().subscribe({
+          next: (url) => {
+            this.db
+              .object(`users/${uid}`)
+              .update({
+                img: url,
               })
-            );
+              .catch(() =>
+                this.snackBar.open('Щось пішло не так', 'Закрити', {
+                  duration: 10000,
+                })
+              );
+          },
+          error: () => {},
         });
       })
       .catch(() =>
@@ -73,10 +77,30 @@ export class UsersService {
   }
   getUserInfo() {
     return this.getUser().pipe(
-      switchMap((user) => this.db.object(`users/${user?.uid}`).valueChanges())
+      switchMap((user) =>
+        this.db.object<User>(`users/${user?.uid}`).valueChanges()
+      )
     );
   }
-  checkAdmin() {}
+  checkAdmin() {
+    let userUid: string | undefined;
+    return this.getUser().pipe(
+      take(1),
+      switchMap((user) => {
+        userUid = user?.uid;
+        return this.db.list<string>(`admins`).valueChanges();
+      }),
+      map((admins) => {
+        let check = false;
+        admins.forEach((admin) => {
+          if (admin === userUid) {
+            check = true;
+          }
+        });
+        return check;
+      })
+    );
+  }
   updateWeight(dateYear: number, weight: string[], newWeight: string) {
     const d = new Date();
     const year = d.getFullYear();

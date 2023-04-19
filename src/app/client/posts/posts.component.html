@@ -1,3 +1,35 @@
 <div class="posts">
-  <h1 class="posts__title">Публікації</h1>
+  <div class="posts__container posts__container_title">
+    <h1 class="posts__title">Публікації</h1>
+    <button
+      color="primary"
+      (click)="openDialog()"
+      class="posts__btn"
+      mat-raised-button
+      *ngIf="checkAdmin"
+    >
+      <svg
+        class="posts__edit"
+        height="25px"
+        width="25px"
+        viewBox="0 96 960 960"
+      >
+        <use href="assets/sprite.svg#icon-edit"></use>
+      </svg>
+    </button>
+  </div>
+  <div
+    class="posts__container posts__container_items"
+    *ngIf="posts.length"
+    appScroll
+  >
+    <app-post-item
+      *ngFor="let post of posts"
+      [postItem]="post"
+      [isAdmin]="checkAdmin"
+    ></app-post-item>
+  </div>
+  <div class="posts__container posts__container_empty" *ngIf="!posts.length">
+    Новини відсутні
+  </div>
 </div>

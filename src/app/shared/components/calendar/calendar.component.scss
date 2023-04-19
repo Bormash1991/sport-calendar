@@ -1,3 +1,15 @@
+.calendar {
+  z-index: 10;
+  position: relative;
+  width: 100%;
+}
+::ng-deep .owl-dt-inline-container .owl-dt-calendar {
+  height: auto;
+}
+::ng-deep .owl-dt-inline-container,
+.owl-dt-popup-container {
+  width: auto;
+}
 ::ng-deep .owl-dt-container {
   background-color: transparent;
 }
@@ -35,4 +47,10 @@
 }
 ::ng-deep .owl-dt-calendar-header {
   color: white !important;
+}
+::ng-deep
+  .owl-dt-calendar-table
+  .owl-dt-calendar-header
+  .owl-dt-calendar-table-divider:after {
+  content: none;
 }

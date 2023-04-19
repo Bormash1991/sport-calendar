@@ -16,6 +16,11 @@ import { EventItemComponent } from './components/event-item/event-item.component
 import { EventMoreModalComponent } from './components/event-more-modal/event-more-modal.component';
 import { NotificationItemComponent } from './components/notification-item/notification-item.component';
 import { CreateNotificationModalComponent } from './components/create-notification-modal/create-notification-modal.component';
+import { NotifMoreModalComponent } from './components/notif-more-modal/notif-more-modal.component';
+import { NotifPopupComponent } from './components/notif-popup/notif-popup.component';
+import { SmallPostItemComponent } from './components/small-post-item/small-post-item.component';
+import { RouterModule } from '@angular/router';
+import { ScrollDirective } from './directives/scroll.directive';
 
 @NgModule({
   declarations: [
@@ -26,6 +31,10 @@ import { CreateNotificationModalComponent } from './components/create-notificati
     EventMoreModalComponent,
     NotificationItemComponent,
     CreateNotificationModalComponent,
+    NotifMoreModalComponent,
+    NotifPopupComponent,
+    SmallPostItemComponent,
+    ScrollDirective,
   ],
   imports: [
     CommonModule,
@@ -37,6 +46,7 @@ import { CreateNotificationModalComponent } from './components/create-notificati
       echarts: () => import('echarts'),
     }),
     MaterialModule,
+    RouterModule,
   ],
   providers: [AuthService, UsersService],
   exports: [
@@ -44,6 +54,9 @@ import { CreateNotificationModalComponent } from './components/create-notificati
     WeightGraphComponent,
     EventItemComponent,
     NotificationItemComponent,
+    NotifPopupComponent,
+    SmallPostItemComponent,
+    ScrollDirective,
   ],
 })
 export class SharedModule {}

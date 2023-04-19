@@ -1,0 +1,18 @@
+.not-found {
+  height: 100vh;
+
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  color: rgb(165, 152, 152);
+  &__code {
+    font-weight: 500;
+    font-size: 70px;
+  }
+  &__text {
+    font-weight: 400;
+    font-size: 30px;
+    margin-top: 5px;
+  }
+}

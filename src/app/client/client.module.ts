@@ -10,6 +10,7 @@ import {
   OwlNativeDateTimeModule,
 } from '@danielmoncada/angular-datetime-picker';
 import { FormsModule } from '@angular/forms';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   declarations: [ClientComponent, HeaderComponent, NavBarComponent],
@@ -20,6 +21,7 @@ import { FormsModule } from '@angular/forms';
     OwlDateTimeModule,
     OwlNativeDateTimeModule,
     FormsModule,
+    SharedModule,
   ],
 })
 export class ClientModule {}

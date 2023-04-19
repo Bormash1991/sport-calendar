@@ -1,15 +1,15 @@
 .welcome {
   position: relative;
   padding: 25px;
-  padding-right: 70px;
   background-color: #008e8a;
   border-radius: 15px;
   color: white;
-  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-start;
+  gap: 15px;
+  height: 100%;
   &__title {
     font-size: 25px;
     font-weight: 600;
@@ -17,7 +17,7 @@
   &__text {
     font-size: 18px;
     margin-top: 25px;
-    width: 75%;
+    width: 100%;
     font-weight: 300;
     line-height: 1.28;
   }
@@ -36,14 +36,45 @@
     height: 45px !important;
   }
   &__img {
-    position: absolute;
-    top: 10px;
-    right: -15px;
-    height: 260px;
+    display: none;
   }
 }
 .mdc-button__label {
   display: flex !important;
   align-items: center !important;
   gap: 7px;
+}
+@media (min-width: 768px) {
+  .welcome {
+    padding-right: 220px;
+    &__img {
+      display: block;
+      position: absolute;
+      top: 5px;
+      right: 10px;
+      height: 250px;
+    }
+  }
+}
+@media (min-width: 1024px) {
+  .welcome {
+    padding-right: 25px;
+    &__img {
+      display: none;
+      position: absolute;
+      top: 5px;
+      height: 240px;
+    }
+  }
+}
+@media (min-width: 1440px) {
+  .welcome {
+    padding-right: 220px;
+    &__img {
+      display: block;
+      top: 10px;
+      right: -15px;
+      height: 260px;
+    }
+  }
 }

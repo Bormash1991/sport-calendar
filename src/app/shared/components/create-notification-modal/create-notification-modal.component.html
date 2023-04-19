@@ -1,1 +1,23 @@
-<p>create-notification-modal works!</p>
+<h1 class="modal__title" mat-dialog-title>Створити подію</h1>
+<div class="modal" mat-dialog-content>
+  <form class="modal__box" [formGroup]="form">
+    <mat-form-field>
+      <mat-label> Подія </mat-label>
+      <textarea rows="3" matInput formControlName="event" required></textarea>
+    </mat-form-field>
+  </form>
+  <h3 class="modal__title">Час</h3>
+  <owl-date-time-inline
+    class="modal__picker"
+    [(ngModel)]="time"
+    [pickerType]="'timer'"
+  ></owl-date-time-inline>
+</div>
+<div class="modal__btn-box" mat-dialog-actions>
+  <button class="modal__btn-cancel" color="primary" mat-button mat-dialog-close>
+    Cancel
+  </button>
+  <button class="modal__btn-ok" color="primary" mat-button (click)="upd()">
+    OK
+  </button>
+</div>

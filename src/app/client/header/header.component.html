@@ -8,13 +8,15 @@
       <div class="header__date">{{ date }}</div>
       <a
         matRipple
-        [matRippleColor]="'rgba(255, 255, 255, 0.1)'"
+        [matRippleColor]="'rgba(255, 255, 255, 0.197)'"
         routerLink="user"
         class="header__user"
       >
         <div class="header__user_box">
           <div class="header__user_name">{{ userName }}</div>
-          <div class="header__user_role">admin</div>
+          <div class="header__user_role">
+            {{ checkAdmin ? "admin" : "user" }}
+          </div>
         </div>
         <img
           [src]="userImg"

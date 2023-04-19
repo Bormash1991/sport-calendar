@@ -1,24 +1,16 @@
 .header {
   color: white;
-  padding: 20px 70px;
-
+  padding: 20px 10px;
   &__container {
     display: flex;
     justify-content: space-between;
+    align-items: center;
   }
   &__logo {
     line-height: 23px;
     font-size: 18px;
     letter-spacing: 0.8px;
     font-weight: 500;
-  }
-  &__search {
-    background-color: transparent;
-    border: none;
-    border-bottom: 1.5px solid green;
-    color: white;
-    padding: 10px 10px;
-    font-size: 16px;
   }
   &__box {
     display: flex;
@@ -29,15 +21,16 @@
     color: rgba(255, 255, 255, 0.637);
   }
   &__user {
-    display: flex;
+    display: none;
     align-items: center;
-    gap: 15px;
+    gap: 10px;
     color: white;
     text-decoration: none;
     outline: none;
     padding: 10px;
     border-radius: 5px;
     margin-right: -10px;
+    cursor: pointer;
     &_name {
       font-size: 20px;
       font-weight: 500;
@@ -53,5 +46,19 @@
       height: 45px;
       border-radius: 50%;
     }
+  }
+}
+@media (min-width: 768px) {
+  .header {
+    padding: 20px 20px;
+    &__user {
+      display: flex;
+    }
+  }
+}
+
+@media (min-width: 1440px) {
+  .header {
+    padding: 20px 70px;
   }
 }

@@ -1,8 +1,10 @@
 .graph_main {
-  padding: 25px 30px;
+  padding: 25px 10px;
   padding-bottom: 0px;
+  padding-right: 0;
   background-color: #131517;
   border-radius: 15px;
+  height: 100%;
   &__text {
     margin-bottom: -35px;
     color: white;
@@ -10,11 +12,14 @@
     font-size: 22px;
     font-weight: 500;
   }
+  &__view {
+    width: 99%;
+  }
 }
 .graph_user {
   padding-bottom: 0px;
   background-color: transparent;
-  margin-top: 30px;
+  margin-top: 20px;
   &__text {
     margin-bottom: -20px;
     color: white;
@@ -23,6 +28,17 @@
   }
   &__view {
     position: relative !important;
-    left: -53px !important;
+    left: 0px !important;
+    width: 99%;
+  }
+}
+@media (min-width: 768px) {
+  .graph_main {
+    padding: 25px 30px;
+  }
+  .graph_user {
+    &__view {
+      left: -53px !important;
+    }
   }
 }

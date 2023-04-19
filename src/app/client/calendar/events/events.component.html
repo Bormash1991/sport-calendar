@@ -2,7 +2,7 @@
   <div *ngIf="!events.length" class="events-box__empty">
     На цей день нічого не заплановано
   </div>
-  <div class="events-box__container">
+  <div class="events-box__container" *ngIf="events.length">
     <app-event-item
       [classForText]="'big'"
       *ngFor="let item of events"

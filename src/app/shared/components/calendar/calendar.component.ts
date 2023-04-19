@@ -1,5 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { DateService } from '../../services/date.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-shared-calendar',
@@ -9,15 +10,19 @@ import { DateService } from '../../services/date.service';
 export class CalendarComponent implements OnInit {
   selected!: Date;
   @Input() inputDate: boolean = false;
-
+  subj!: Subscription;
   constructor(private dateService: DateService) {}
+
   chooseDate(e: Date) {
     this.dateService.setNewDate(e);
   }
   ngOnInit(): void {
     if (this.inputDate) {
-      this.dateService.getDate().subscribe((date) => {
-        this.selected = date;
+      this.dateService.getDate().subscribe({
+        next: (date) => {
+          this.selected = date;
+        },
+        error: () => {},
       });
     } else {
       this.selected = new Date();

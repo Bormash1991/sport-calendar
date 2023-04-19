@@ -1,0 +1,35 @@
+<h1 class="modal__title" mat-dialog-title>Додати новину</h1>
+<div class="modal" mat-dialog-content>
+  <form class="modal__box" [formGroup]="form">
+    <mat-form-field>
+      <mat-label> Заголовок</mat-label>
+      <input formControlName="title" matInput required />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label> Текст</mat-label>
+      <textarea
+        rows="5"
+        formControlName="text"
+        matInput
+        required
+      ></textarea>
+    </mat-form-field>
+  </form>
+  <button
+    (click)="selectFile()"
+    color="primary"
+    class="modal__btn"
+    mat-raised-button
+  >
+    Додати зображення
+  </button>
+  <img class="modal__preview" [src]="img" />
+</div>
+<div class="modal__btn-box" mat-dialog-actions>
+  <button class="modal__btn-cancel" color="primary" mat-button mat-dialog-close>
+    Cancel
+  </button>
+  <button class="modal__btn-ok" color="primary" (click)="upd()" mat-button>
+    OK
+  </button>
+</div>

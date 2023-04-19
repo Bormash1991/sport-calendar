@@ -1,8 +1,112 @@
 .wrapper {
-  max-width: 1600px;
-  margin: 0 auto;
   &__box {
     display: grid;
-    grid-template-columns: auto 0fr 1fr;
+    grid-template-columns: 0fr 1fr;
+    position: relative;
+  }
+  &__nav {
+    position: fixed;
+    z-index: 20;
+    bottom: 5px;
+    left: 50%;
+    transform: translate(-50%, 0%);
+  }
+}
+.notif {
+  position: fixed;
+  top: 0px;
+  left: 50%;
+  transform: translate(-50%, -100%);
+  z-index: 20;
+}
+.hide-nav {
+  animation: hide_nav 0.4s forwards;
+}
+.show-nav {
+  animation: show_nav 0.4s forwards;
+}
+@keyframes show_nav {
+  from {
+    transform: translate(-50%, 120%);
+  }
+  to {
+    transform: translate(-50%, 0);
+  }
+}
+@keyframes hide_nav {
+  from {
+    transform: translate(-50%, 0);
+  }
+  to {
+    transform: translate(-50%, 120%);
+  }
+}
+@media (min-width: 320px) {
+  @keyframes show {
+    from {
+    }
+    to {
+      transform: translate(-50%, 2%);
+    }
+  }
+  @keyframes hide {
+    from {
+      transform: translate(-50%, 2%);
+    }
+    to {
+      transform: translate(-50%, -100%);
+    }
+  }
+  .show {
+    animation: show 0.5s forwards;
+  }
+  .hide {
+    animation: hide 0.5s forwards;
+  }
+}
+
+@media (min-width: 768px) {
+  .notif {
+    top: auto;
+    bottom: 80px;
+    right: 0;
+    left: auto;
+    transform: translate(100%, 0%);
+  }
+  .show {
+    animation: show 0.5s forwards;
+  }
+  .hide {
+    animation: hide 0.5s forwards;
+  }
+  @keyframes show {
+    from {
+    }
+    to {
+      transform: translate(-10%, 0%);
+    }
+  }
+  @keyframes hide {
+    from {
+      transform: translate(-10%, 0%);
+    }
+    to {
+      transform: translate(100%, 0%);
+    }
+  }
+}
+@media (min-width: 1440px) {
+  .wrapper {
+    max-width: 1600px;
+    margin: 0 auto;
+    position: relative;
+    height: 100vh;
+    &__box {
+      grid-template-columns: auto 0fr 1fr;
+    }
+    &__nav {
+      position: static;
+      transform: translate(0);
+    }
   }
 }

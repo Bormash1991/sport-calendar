@@ -1,0 +1,16 @@
+<div class="exercise" (mouseenter)="showBtn()" (mouseleave)="hideBtn()">
+  <button
+    matRipple
+    [matRippleColor]="'rgba(255, 255, 255, 0.1)'"
+    [class]="'exercise__item ' + btnClass"
+    (click)="deleteExercise()"
+    *ngIf="isAdmin"
+  >
+    <mat-icon>delete</mat-icon>
+  </button>
+  <div class="exercise__box">
+    <img [src]="item[1].img" alt="" class="exercise__img" />
+  </div>
+  <div class="exercise__title">{{ item[1].title }}</div>
+  <div class="exercise__text">{{ item[1].text }}</div>
+</div>

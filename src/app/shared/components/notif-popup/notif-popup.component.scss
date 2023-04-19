@@ -1,0 +1,41 @@
+.popup {
+  padding: 15px 30px;
+  border-radius: 7px;
+  background-color: #282525;
+  color: white;
+  width: 300px;
+  word-wrap: break-word;
+  text-overflow: ellipsis;
+  line-height: 1.28;
+  padding-right: 5px;
+  &__title {
+    font-size: 23px;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  &__text {
+    font-size: 17px;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    margin-top: 10px;
+    padding-right: 25px;
+  }
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__btn {
+    background-color: transparent;
+    border: none;
+    color: white;
+    border-radius: 5px;
+  }
+  &::ng-deep .material-icons {
+    line-height: 1.18;
+  }
+}
