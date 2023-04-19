@@ -1,5 +1,5 @@
 export const environment = {
-  production: false,
+  production: true,
   firebase: {
     apiKey: 'AIzaSyDDFbUJ90NcZCCNjl2mXtkdwfa2fPPPf3Q',
     authDomain: 'sport-calendar-dcaab.firebaseapp.com',

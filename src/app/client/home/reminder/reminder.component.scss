@@ -20,6 +20,7 @@
     align-items: center;
   }
   &__btn {
+    display: block;
     background-color: transparent !important;
     color: #008e8a !important;
     border: 1.5px solid #008e8a;
@@ -39,6 +40,4 @@
       display: none;
     }
   }
-}
-@media (min-width: 768px) {
 }
