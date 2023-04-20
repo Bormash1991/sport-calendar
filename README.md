@@ -3,6 +3,7 @@
 Deploy link https://sport-calendar-dcaab.web.app
 
 ##Installation
+
 1. Clone the repo
 
 	`git clone https://github.com/Bormash1991/sport-calendar.git`
