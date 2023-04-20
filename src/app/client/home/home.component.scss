@@ -12,7 +12,7 @@
     display: grid;
     grid-template-columns: 1fr;
     gap: 20px;
-    height: calc(100vh - 86px - 28px - 25px);
+    height: calc(100vh - 86px - 28px - 25px - 50px);
     overflow: auto;
     &::-webkit-scrollbar {
       display: none;

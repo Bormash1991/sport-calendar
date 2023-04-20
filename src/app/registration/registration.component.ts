@@ -4,6 +4,7 @@ import { AuthService } from '../shared/services/auth.service';
 import { UsersService } from '../shared/services/users.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatStepper } from '@angular/material/stepper';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-registration',
@@ -15,7 +16,8 @@ export class RegistrationComponent implements OnInit {
     private fb: FormBuilder,
     private authService: AuthService,
     private usersService: UsersService,
-    private snackBar: MatSnackBar
+    private snackBar: MatSnackBar,
+    private router: Router
   ) {}
   ngOnInit(): void {}
   @ViewChild('stepper') myStepper!: MatStepper;
@@ -53,6 +55,7 @@ export class RegistrationComponent implements OnInit {
       .registration(email, password)
       .then((req) => {
         if (req.user) {
+          this.router.navigateByUrl('/');
           return this.usersService.addUserInfo(
             name,
             weight,

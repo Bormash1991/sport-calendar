@@ -30,7 +30,7 @@ export class ClientComponent {
     });
     this.scrollService
       .getScroll()
-      .pipe(debounceTime(100))
+      .pipe(debounceTime(50))
       .subscribe((scroll) => {
         if (scroll) {
           this.navStatus = 'show-nav';
