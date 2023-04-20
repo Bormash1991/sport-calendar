@@ -18,7 +18,7 @@
   <div class="reminder__btn-box">
     <button
       color="primary"
-      *ngIf="!notifAccess || !areNotNotif"
+      *ngIf="notifAccess || !areNotNotif"
       class="reminder__btn"
       mat-raised-button
       (click)="openDialog()"

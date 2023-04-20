@@ -1,7 +1,11 @@
-import { initializeApp } from "firebase/app";
-import { getMessaging } from "firebase/messaging";
+importScripts(
+  "https://www.gstatic.com/firebasejs/9.19.0/firebase-app-compat.js"
+);
+importScripts(
+  "https://www.gstatic.com/firebasejs/9.19.0/firebase-messaging-compat.js"
+);
 
-const app = initializeApp({
+const firebaseApp = firebase.initializeApp({
   apiKey: "AIzaSyDDFbUJ90NcZCCNjl2mXtkdwfa2fPPPf3Q",
   authDomain: "sport-calendar-dcaab.firebaseapp.com",
   databaseURL: "https://sport-calendar-dcaab-default-rtdb.firebaseio.com",
@@ -11,4 +15,5 @@ const app = initializeApp({
   appId: "1:219696404483:web:abbdb7f39d2d0559e2d636",
   measurementId: "G-70L3J85XSE",
 });
-const messaging = getMessaging(app);
+
+const messaging = firebase.messaging();

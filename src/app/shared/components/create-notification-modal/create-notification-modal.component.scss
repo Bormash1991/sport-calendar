@@ -48,6 +48,7 @@
 }
 ::ng-deep .mdc-dialog .mdc-dialog__surface {
   min-width: 300px !important;
+  border-radius: 10px;
 }
 
 ::ng-deep .mdc-dialog__surface {
@@ -57,6 +58,13 @@
   padding: 20px 20px;
 }
 @media (min-width: 768px) {
+  .modal {
+    &__btn {
+      &-box {
+        padding-bottom: 20px;
+      }
+    }
+  }
   ::ng-deep .mdc-dialog__container {
     width: 400px !important;
   }
