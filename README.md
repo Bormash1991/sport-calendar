@@ -1,8 +1,8 @@
-#SportCalendar
+# SportCalendar
 
 Deploy link https://sport-calendar-dcaab.web.app
 
-##Installation
+## Installation
 
 1. Clone the repo
 
