@@ -1,27 +1,60 @@
 # SportCalendar
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.2.
+Deploy link https://sport-calendar-dcaab.web.app
 
-## Development server
+## Installation
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+1. Clone the repo
 
-## Code scaffolding
+	`git clone https://github.com/Bormash1991/sport-calendar.git`
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+2. Install NPM packages
 
-## Build
+	`npm install`
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+3. Run this command for a dev server
 
-## Running unit tests
+	`ng serve`
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## About project 
+This is a commercial project. The main idea of the project is to create reminders and schedule events, but you can also see news and sports exercises and how to do them. After scheduling a reminder, you will receive a notification on all devices from which you are logged into your account, and notifications come even when the browser is closed. The project is optimized for all types of devices.
 
-## Running end-to-end tests
+### Built With
+- ![Angular](https://img.shields.io/badge/angular-%23DD0031.svg?style=for-the-badge&logo=angular&logoColor=white)
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+- ![RxJS](https://img.shields.io/badge/rxjs-%23B7178C.svg?style=for-the-badge&logo=reactivex&logoColor=white)
 
-## Further help
+- ![Firebase](https://img.shields.io/badge/firebase-%23039BE5.svg?style=for-the-badge&logo=firebase)
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Usage
+
+### Home page 
+This is the main page where you can see many different components. Here you can select a specific date in the calendar on the right, and by selecting a date you will immediately see the events and reminders scheduled for the selected day. Also, by changing the date in the calendar, you can schedule reminders for the selected day.
+
+[![home-page](https://github.com/Bormash1991/sport-calendar/blob/main/demo-img/home-page.png?raw=true "home-page")](https://github.com/Bormash1991/sport-calendar/blob/main/demo-img/home-page.png?raw=true "home-page")
+
+### Events page 
+
+Here you can see all the events for the day you have chosen.
+
+[![events-page](https://github.com/Bormash1991/sport-calendar/blob/main/demo-img/event-page.png?raw=true "events-page")](https://github.com/Bormash1991/sport-calendar/blob/main/demo-img/event-page.png?raw=true "events-page")
+
+### Events page and details
+
+On this page you can see the news, and by clicking on the post you will be taken to the page where you can see the full text.
+
+[![events-page](https://github.com/Bormash1991/sport-calendar/blob/main/demo-img/posts-page.png?raw=true "events-page")](https://github.com/Bormash1991/sport-calendar/blob/main/demo-img/posts-page.png?raw=true "events-page")
+
+[![post-details](https://github.com/Bormash1991/sport-calendar/blob/main/demo-img/post-details.png?raw=true "post-details")](https://github.com/Bormash1991/sport-calendar/blob/main/demo-img/post-details.png?raw=true "post-details")
+
+### Exercises page
+
+This is a page that contains sports exercises with a brief description for each.
+
+[![exercises-page](https://github.com/Bormash1991/sport-calendar/blob/main/demo-img/exrcise-page.png?raw=true "exercises-page")](https://github.com/Bormash1991/sport-calendar/blob/main/demo-img/exrcise-page.png?raw=true "exercises-page")
+
+### User page
+
+Here you can change your profile picture, set a new body weight, and see some information about yourself.
+
+[![user-page](https://github.com/Bormash1991/sport-calendar/blob/main/demo-img/user.png?raw=true "user-page")](https://github.com/Bormash1991/sport-calendar/blob/main/demo-img/user.png?raw=true "user-page")
