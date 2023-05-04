@@ -23,7 +23,7 @@ export class ReminderComponent implements OnInit, OnDestroy {
     this.notifSubj.unsubscribe();
   }
   areNotNotif: boolean = true;
-  notifAccess: boolean = true;
+  notifAccess: boolean = false;
   eventsSubj!: Subscription;
   notifSubj!: Subscription;
   notifications: [string, NotifItem][] = [];
@@ -45,8 +45,7 @@ export class ReminderComponent implements OnInit, OnDestroy {
         next: (token) => {
           if (token) {
             this.notificationService.setTokenInDb(token);
-          } else {
-            this.notifAccess = false;
+            this.notifAccess = true;
           }
         },
         error: () => {},
